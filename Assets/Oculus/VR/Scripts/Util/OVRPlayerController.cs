@@ -149,6 +149,7 @@ public class OVRPlayerController : MonoBehaviour
 	public bool RotationEitherThumbstick = false;
 
 	protected CharacterController Controller = null;
+	[SerializeField]
 	protected OVRCameraRig CameraRig = null;
 
 	private float MoveScale = 1.0f;
@@ -186,14 +187,20 @@ public class OVRPlayerController : MonoBehaviour
 		// and to be influenced by rotation
 		OVRCameraRig[] CameraRigs = gameObject.GetComponentsInChildren<OVRCameraRig>();
 
-		if (CameraRigs.Length == 0)
-			Debug.LogWarning("OVRPlayerController: No OVRCameraRig attached.");
-		else if (CameraRigs.Length > 1)
-			Debug.LogWarning("OVRPlayerController: More then 1 OVRCameraRig attached.");
-		else
-			CameraRig = CameraRigs[0];
-
-		InitialYRotation = transform.rotation.eulerAngles.y;
+        #region Moded by DK
+        if (CameraRig == null)
+		{
+        #endregion Moded by DK
+            if (CameraRigs.Length == 0)
+				Debug.LogWarning("OVRPlayerController: No OVRCameraRig attached.");
+			else if (CameraRigs.Length > 1)
+				Debug.LogWarning("OVRPlayerController: More then 1 OVRCameraRig attached.");
+			else
+				CameraRig = CameraRigs[0];
+        #region Moded by DK
+        }
+        #endregion Moded by DK
+        InitialYRotation = transform.rotation.eulerAngles.y;
 	}
 
 	void OnEnable()
