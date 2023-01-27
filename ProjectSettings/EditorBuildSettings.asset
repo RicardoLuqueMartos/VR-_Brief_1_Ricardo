@@ -13,8 +13,8 @@ EditorBuildSettings:
     guid: 7bf5873a6daa71c4fb9422186a6dd09e
   - enabled: 1
     path: Assets/Oculus/Interaction/Samples/Scenes/Examples/Fruits Distance Grab
-      Movements.unity
-    guid: c60387c4ded89024b8061ae755f9b80b
+      Player.unity
+    guid: 446e1ffddbaa15e49ab4fa95637c29c0
   - enabled: 1
     path: Assets/Oculus/Interaction/Samples/Scenes/Examples/GestureExamples.unity
     guid: 4ee2a082a0e621b49ab01667c66f1599
